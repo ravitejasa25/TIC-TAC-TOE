@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <h1>Tic-Tac-Toe</h1>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" checked>
+                <label for="theme-switch" class="switch-label">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </label>
+            </div>
+        </header>
+
+        <!-- Settings Panel -->
+        <section class="settings-panel panel-glass">
+            <div class="control-group">
+                <label for="game-mode">Game Mode:</label>
+                <select id="game-mode">
+                    <option value="pvp">Player vs Player</option>
+                    <option value="pvc-basic">Player vs AI (Basic)</option>
+                    <option value="pvc-smart">Player vs AI (Smart)</option>
+                </select>
+            </div>
+            <button id="reset-scores-btn" class="btn btn-secondary">Reset Scores</button>
+        </section>
+
+        <!-- Scoreboard -->
+        <section class="scoreboard panel-glass">
+            <div class="score-card player-x">
+                <span class="score-label">Player X</span>
+                <span class="score-value" id="score-x">0</span>
+            </div>
+            <div class="score-card draws">
+                <span class="score-label">Draws</span>
+                <span class="score-value" id="score-draw">0</span>
+            </div>
+            <div class="score-card player-o">
+                <span class="score-label">Player O</span>
+                <span class="score-value" id="score-o">0</span>
+            </div>
+        </section>
+
+        <!-- Game Info (Turn & Timer) -->
+        <section class="game-info">
+            <div class="turn-indicator">
+                <span id="turn-text">Player X's Turn</span>
+            </div>
+            <div class="timer">
+                <div class="timer-bar" id="timer-bar"></div>
+                <span id="timer-text">15s</span>
+            </div>
+        </section>
+
+        <!-- Main Game Area -->
+        <main class="game-area">
+            <div class="board" id="board">
+                <!-- 9 Cells -->
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+                
+                <!-- Winning Line Overlay -->
+                <div class="winning-line" id="winning-line"></div>
+            </div>
+        </main>
+
+        <!-- Controls -->
+        <section class="controls">
+            <button id="undo-btn" class="btn btn-secondary" disabled>Undo Last Move</button>
+            <button id="restart-btn" class="btn btn-primary">Restart Game</button>
+        </section>
+
+        <!-- History -->
+        <section class="history-panel panel-glass">
+            <h3>Game History</h3>
+            <ul id="history-list">
+                <li class="history-placeholder">No moves yet.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
